@@ -1,26 +1,99 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-poppins: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: var(--font-poppins);
+}
+
+.TextFSSM {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.TextFS {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.TextFSLG {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.TextFSXL {
+  font-size: 20px;
+}
+
+.HeadingFS1 {
+  font-size: 38px;
+}
+
+.HeadingFS2 {
+  font-size: 30px;
+  line-height: 38px;
+}
+
+.HeadingFS3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.HeadingFS4 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.HeadingFS5 {
+  font-size: 16px;
+}
+
+.TextLH {
+  line-height: 22px;
+}
+
+.TextLHLG {
+  line-height: 24px;
+}
+
+.TextLHSM {
+  line-height: 20px;
+}
+
+.HeadingLH1 {
+  line-height: 46px;
+}
+
+.HeadingLH2 {
+  line-height: 38px;
+}
+
+.HeadingLH3 {
+  line-height: 32px;
+}
+
+.HeadingLH4 {
+  line-height: 28px;
+}
+
+.HeadingLH5 {
+  line-height: 24px;
+}
+
+.ant-select-status-error .ant-select-selector {
+  box-shadow: none !important;
+  border-color: #f5f5f5 !important;
+}
+.ant-select-status-error .ant-select-arrow {
+  color: inherit !important;
 }
