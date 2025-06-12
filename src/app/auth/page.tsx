@@ -52,7 +52,7 @@ export default function AuthPage() {
 
   return (
     <div className="mt-10 p-2 flex justify-center">
-      <div className="lg:flex lg:justify-between lg:max-w-[85%] lg:w-full">
+      <div className="lg:flex lg:justify-between lg:max-w-[85%] w-full">
         <div className="lg:w-[37.2%] lg:flex lg:flex-col lg:justify-center">
           <div>
             {(registerStep === 1 || isLogin) && !isForgotPassword && (
@@ -104,9 +104,6 @@ export default function AuthPage() {
                 </span>
                 <span className="TextFS text-[#1D1D1FA6] font-normal">
                   Add your birthday and location where you live{' '}
-                  <span className="opacity-0 pointer-events-none select-none">
-                    adadasdasdasdasd
-                  </span>
                 </span>
               </div>
             )}
@@ -139,7 +136,7 @@ export default function AuthPage() {
                   <span className="HeadingFS3 font-medium text-[#1D1D1FE5]">
                     Password recovery
                   </span>
-                  <span className="TextFS text-[#1D1D1FA6] font-normal w-[342px]">
+                  <span className="TextFS text-[#1D1D1FA6] font-normal">
                     Enter your phone number{' '}
                   </span>
                 </div>
@@ -217,7 +214,10 @@ export default function AuthPage() {
                 </Button>
               )}
             {registerStep === 5 && (
-              <Button className="w-full mt-2 !border-0" variant="text">
+              <Button
+                className="w-full mt-2 !border-0 !shadow-none"
+                variant="text"
+              >
                 <span className="TextFSLG font-medium text-[#1D1D1FA6] tracking-[-0.03em]">
                   Skip for now
                 </span>

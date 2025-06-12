@@ -151,7 +151,7 @@ export default function ForgotPasswordForm({
               />
             </Form.Item>
             <Form.Item
-              name="password"
+              name="passwordConfirm"
               label="Confirm your new password"
               validateStatus="error"
             >
