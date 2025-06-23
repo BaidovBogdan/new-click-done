@@ -1,3 +1,5 @@
+'use client';
+
 import { Form, Input, Select } from 'antd';
 import { ForgotPasswordFormProps } from '../';
 import { useEffect, useState } from 'react';
@@ -8,7 +10,6 @@ import {
   PasswordConditionsCard,
 } from './RegisterForm';
 import type { GetProps } from 'antd';
-import { hidePassword, showPassword } from '@/shared/ui/Icons';
 
 type OTPProps = GetProps<typeof Input.OTP>;
 
@@ -145,7 +146,19 @@ export default function ForgotPasswordForm({
               validateStatus="error"
             >
               <Input.Password
-                iconRender={visible => (visible ? hidePassword : showPassword)}
+                iconRender={visible =>
+                  visible ? (
+                    <img
+                      src="/images/svgIcons/passwordHide.svg"
+                      alt="passwordHide"
+                    />
+                  ) : (
+                    <img
+                      src="/images/svgIcons/passwordOpen.svg"
+                      alt="passwordOpen"
+                    />
+                  )
+                }
                 style={{ height: '48px', borderRadius: '12px' }}
                 placeholder="New password"
               />
@@ -156,7 +169,19 @@ export default function ForgotPasswordForm({
               validateStatus="error"
             >
               <Input.Password
-                iconRender={visible => (visible ? hidePassword : showPassword)}
+                iconRender={visible =>
+                  visible ? (
+                    <img
+                      src="/images/svgIcons/passwordHide.svg"
+                      alt="passwordHide"
+                    />
+                  ) : (
+                    <img
+                      src="/images/svgIcons/passwordOpen.svg"
+                      alt="passwordOpen"
+                    />
+                  )
+                }
                 style={{ height: '48px', borderRadius: '12px' }}
                 placeholder="Confirm password"
               />

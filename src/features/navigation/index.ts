@@ -1,3 +1,3 @@
-import { Header } from './ui';
+import { Header, Overlay } from './ui';
 
-export { Header };
+export { Header, Overlay };

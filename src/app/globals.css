@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #f7f7f7 !important;
 }
 
 * {
@@ -37,6 +38,11 @@ body {
 
 .HeadingFS1 {
   font-size: 38px;
+}
+
+.TextFSXLLG {
+  font-size: 34px;
+  line-height: 40px;
 }
 
 .HeadingFS2 {

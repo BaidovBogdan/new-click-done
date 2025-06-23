@@ -6,61 +6,9 @@ import { useState, useEffect, useMemo } from 'react';
 import PhoneInput from 'react-phone-number-input/input';
 import debounce from 'lodash.debounce';
 import type { GetProps } from 'antd';
-import {
-  hidePassword,
-  showPassword,
-  svgDonePasswordConditions,
-  svgErrorPasswordConditions,
-  svgSearchSelect,
-  svgLocationSelect,
-} from '@/shared/ui';
 import Image from 'next/image';
 
 type OTPProps = GetProps<typeof Input.OTP>;
-
-const Flag = () => {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g clipPath="url(#clip0_493_4036)">
-        <path
-          d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"
-          fill="#F0F0F0"
-        />
-        <path
-          d="M2.34314 13.6569C-0.781047 10.5327 -0.781047 5.46736 2.34314 2.34314C2.34292 2.34348 6.95655 8.00001 6.95655 8.00001L2.34314 13.6569Z"
-          fill="black"
-        />
-        <path
-          d="M6.95609 7.99996L1.06059 4.01599C0.877812 4.33371 0.716625 4.66533 0.578125 5.00858L3.56278 7.99999L0.578219 10.9916C0.716594 11.3346 0.877625 11.666 1.06028 11.9835L6.95609 7.99996Z"
-          fill="#FFDA44"
-        />
-        <path
-          d="M15.9321 6.95654H6.95614L2.34289 2.34326C1.84577 2.84039 1.41386 3.40261 1.06086 4.01607L5.03708 8.00001L1.06055 11.9834C1.41355 12.5971 1.84564 13.1595 2.34289 13.6567L6.95614 9.04348H15.9321C15.9766 8.70192 15.9998 8.35367 15.9998 8.00001C15.9998 7.64636 15.9766 7.29811 15.9321 6.95654Z"
-          fill="#6DA544"
-        />
-        <path
-          d="M3.12891 14.3461C4.47794 15.383 6.16659 15.9999 7.99959 15.9999C11.6958 15.9999 14.806 13.493 15.724 10.0869H7.38812L3.12891 14.3461Z"
-          fill="#0052B4"
-        />
-        <path
-          d="M15.724 5.91303C14.806 2.50691 11.6958 0 7.99959 0C6.16659 0 4.47794 0.616906 3.12891 1.65384L7.38809 5.91303H15.724Z"
-          fill="#D80027"
-        />
-      </g>
-      <defs>
-        <clipPath id="clip0_493_4036">
-          <rect width="16" height="16" fill="white" />
-        </clipPath>
-      </defs>
-    </svg>
-  );
-};
 
 export interface PasswordConditions {
   length: boolean;
@@ -104,9 +52,11 @@ export const PasswordConditionsCard: React.FC<PasswordConditionsCardProps> = ({
           }`}
         >
           <span className="mr-2 translate-y-[4.5px]">
-            {conditions.length
-              ? svgDonePasswordConditions
-              : svgErrorPasswordConditions}
+            {conditions.length ? (
+              <img src="/images/svgIcons/passCondDone.svg" alt="done" />
+            ) : (
+              <img src="/images/svgIcons/passCondError.svg" alt="error" />
+            )}
           </span>{' '}
           Contains at least 8 characters
         </li>
@@ -116,9 +66,11 @@ export const PasswordConditionsCard: React.FC<PasswordConditionsCardProps> = ({
           }`}
         >
           <span className="mr-2 translate-y-[4.5px]">
-            {conditions.hasUpperLower
-              ? svgDonePasswordConditions
-              : svgErrorPasswordConditions}
+            {conditions.hasUpperLower ? (
+              <img src="/images/svgIcons/passCondDone.svg" alt="done" />
+            ) : (
+              <img src="/images/svgIcons/passCondError.svg" alt="error" />
+            )}
           </span>
           Contains both lower (a-z) and upper case letters (A-Z)
         </li>
@@ -128,9 +80,11 @@ export const PasswordConditionsCard: React.FC<PasswordConditionsCardProps> = ({
           }`}
         >
           <span className="mr-2 translate-y-[4.5px]">
-            {conditions.hasNumberOrSymbol
-              ? svgDonePasswordConditions
-              : svgErrorPasswordConditions}
+            {conditions.hasNumberOrSymbol ? (
+              <img src="/images/svgIcons/passCondDone.svg" alt="done" />
+            ) : (
+              <img src="/images/svgIcons/passCondError.svg" alt="error" />
+            )}
           </span>{' '}
           Contains at least one number (0-9) or a symbol
         </li>
@@ -140,9 +94,11 @@ export const PasswordConditionsCard: React.FC<PasswordConditionsCardProps> = ({
           }`}
         >
           <span className="mr-2 translate-y-[4.5px]">
-            {conditions.noEmail
-              ? svgDonePasswordConditions
-              : svgErrorPasswordConditions}
+            {conditions.noEmail ? (
+              <img src="/images/svgIcons/passCondDone.svg" alt="done" />
+            ) : (
+              <img src="/images/svgIcons/passCondError.svg" alt="error" />
+            )}
           </span>{' '}
           Does not contain your email address
         </li>
@@ -152,9 +108,11 @@ export const PasswordConditionsCard: React.FC<PasswordConditionsCardProps> = ({
           }`}
         >
           <span className="mr-2 translate-y-[4.5px]">
-            {conditions.isNotCommon
-              ? svgDonePasswordConditions
-              : svgErrorPasswordConditions}
+            {conditions.isNotCommon ? (
+              <img src="/images/svgIcons/passCondDone.svg" alt="done" />
+            ) : (
+              <img src="/images/svgIcons/passCondError.svg" alt="error" />
+            )}
           </span>{' '}
           Is not commonly used
         </li>
@@ -172,7 +130,7 @@ export const countryOptions = [
         className="TextFSLG font-normal"
       >
         <div style={{ marginRight: -4, marginTop: -3 }}>
-          <Flag />
+          <img src="/images/svgIcons/flag.svg" alt="flag" />
         </div>
         &nbsp;+27
       </div>
@@ -283,7 +241,11 @@ export default function RegisterForm({
           value={searchValue}
           onChange={e => setSearchValue(e.target.value)}
           style={{ borderRadius: '12px', height: 48 }}
-          prefix={<span className="mr-2">{svgSearchSelect}</span>}
+          prefix={
+            <span className="mr-2">
+              <img src="/images/svgIcons/search.svg" alt="search" />
+            </span>
+          }
         />
       </div>
       <Divider style={{ margin: '4px 0' }} />
@@ -294,7 +256,9 @@ export default function RegisterForm({
           setSelectedLocation('current_location');
         }}
       >
-        <span className="mr-2">{svgLocationSelect}</span>
+        <span className="mr-2">
+          <img src="/images/svgIcons/location.svg" alt="location" />
+        </span>
         <span>Use my location</span>
       </div>
       {menu}
@@ -507,7 +471,19 @@ export default function RegisterForm({
             )}
             <Form.Item name="password" label="Password" validateStatus="error">
               <Input.Password
-                iconRender={visible => (visible ? hidePassword : showPassword)}
+                iconRender={visible =>
+                  visible ? (
+                    <img
+                      src="/images/svgIcons/passwordHide.svg"
+                      alt="passwordHide"
+                    />
+                  ) : (
+                    <img
+                      src="/images/svgIcons/passwordOpen.svg"
+                      alt="passwordOpen"
+                    />
+                  )
+                }
                 style={{ height: '48px', borderRadius: '12px' }}
                 placeholder="Enter password"
               />
@@ -553,7 +529,7 @@ export default function RegisterForm({
         {registerStep === 5 && (
           <div className="flex flex-col gap-5">
             <Image
-              src="/images/PasswordStrengthContainer.png"
+              src="/images/auth/PasswordStrengthContainer.png"
               alt="asdasd"
               width={440}
               height={4}

@@ -1,14 +1,7 @@
 'use client';
 
-import { ForgotPasswordForm, LoginForm, RegisterForm } from '@/features/auth';
+import { ForgotPasswordForm, LoginForm, RegisterForm } from '@/features';
 import { Button, Divider, message } from 'antd';
-import {
-  ButtonAuth,
-  phoneIcon,
-  facebookIcon,
-  googleIcon,
-  backArrowIcon,
-} from '@/shared/ui';
 import { MailOutlined } from '@ant-design/icons';
 import { useAtom } from 'jotai';
 import {
@@ -17,8 +10,9 @@ import {
   isLoginAtom,
   registerStepAtom,
   forgotPasswordStepAtom,
-} from '@/app/store/atoms';
+} from '@/shared/store/atoms';
 import Image from 'next/image';
+import { ButtonAuth } from '@/shared/ui';
 
 export default function AuthPage() {
   const [isLogin] = useAtom(isLoginAtom);
@@ -59,7 +53,7 @@ export default function AuthPage() {
               <div className="flex flex-col items-center justify-center gap-2">
                 <span className="HeadingFS2 font-medium text-[#1D1D1FE5]">
                   {isLogin ? 'Sign in to ' : 'Sigh up in '}
-                  <span className="text-[#FF7701]">ClickDone</span>
+                  <span className="text-[#FF564F]">ClickDone</span>
                 </span>
                 <span className="HeadingFS4 font-medium text-[#1D1D1F73] tracking-[-0.03em]">
                   Here all people will help you
@@ -69,12 +63,11 @@ export default function AuthPage() {
             {registerStep === 2 && !isLogin && (
               <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-start">
-                  <Button
-                    style={{ width: 40, height: 40 }}
+                  <img
                     onClick={() => setRegisterStep(1)}
-                  >
-                    <div style={{ width: 24, height: 24 }}>{backArrowIcon}</div>
-                  </Button>
+                    src="/images/svgIcons/back.svg"
+                    alt="phone icon"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="HeadingFS3 font-medium text-[#1D1D1FE5]">
@@ -110,7 +103,7 @@ export default function AuthPage() {
             {registerStep === 5 && !isLogin && (
               <div className="flex flex-col items-center justify-center gap-2 lg:hidden">
                 <Image
-                  src="/images/Frame2131328412.webp"
+                  src="/images/auth/Frame2131328412.webp"
                   alt="auth-pic"
                   width={350}
                   height={350}
@@ -122,15 +115,14 @@ export default function AuthPage() {
             {forgotPasswordStep === 1 && isForgotPassword && (
               <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-start">
-                  <Button
-                    style={{ width: 40, height: 40 }}
+                  <img
                     onClick={() => {
                       setForgotPasswordStep(1);
                       setIsForgotPassword(false);
                     }}
-                  >
-                    <div style={{ width: 24, height: 24 }}>{backArrowIcon}</div>
-                  </Button>
+                    src="/images/svgIcons/back.svg"
+                    alt="back"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="HeadingFS3 font-medium text-[#1D1D1FE5]">
@@ -146,12 +138,11 @@ export default function AuthPage() {
             {forgotPasswordStep === 2 && isForgotPassword && (
               <div className="flex flex-col gap-6">
                 <div className="flex items-center justify-start">
-                  <Button
-                    style={{ width: 40, height: 40 }}
+                  <img
                     onClick={() => setForgotPasswordStep(1)}
-                  >
-                    <div style={{ width: 24, height: 24 }}>{backArrowIcon}</div>
-                  </Button>
+                    src="/images/svgIcons/back.svg"
+                    alt="back"
+                  />
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="HeadingFS3 font-medium text-[#1D1D1FE5]">
@@ -242,8 +233,14 @@ export default function AuthPage() {
                 <div className="flex flex-col items-center justify-center gap-3 w-full">
                   {isEmail ? (
                     <ButtonAuth
-                      icon={phoneIcon}
+                      icon={
+                        <img
+                          src="/images/svgIcons/phone.svg"
+                          alt="phone icon"
+                        />
+                      }
                       onClick={() => setIsEmail(false)}
+                      className="!hidden"
                     >
                       Continue with phone number
                     </ButtonAuth>
@@ -255,10 +252,25 @@ export default function AuthPage() {
                       Continue with email
                     </ButtonAuth>
                   )}
-                  <ButtonAuth icon={facebookIcon}>
+                  <ButtonAuth
+                    icon={
+                      <img
+                        src="/images/svgIcons/facebook.svg"
+                        alt="facebook icon"
+                      />
+                    }
+                    className="!hidden"
+                  >
                     Sign up with Facebook
                   </ButtonAuth>
-                  <ButtonAuth icon={googleIcon}>
+                  <ButtonAuth
+                    icon={
+                      <img
+                        src="/images/svgIcons/google.svg"
+                        alt="google icon"
+                      />
+                    }
+                  >
                     Sign up with Google{' '}
                   </ButtonAuth>
                   <span className="TextFSSM text-[#1D1D1FA6] text-center">
@@ -275,7 +287,7 @@ export default function AuthPage() {
         <div className="w-[52.6%] h-[calc(100%+33px)] hidden lg:block">
           {(registerStep === 1 || registerStep === 2 || isLogin) && (
             <Image
-              src="/images/authPic.webp"
+              src="/images/auth/authPic.webp"
               alt="auth-pic"
               width={600}
               height={680}
@@ -285,7 +297,7 @@ export default function AuthPage() {
           )}
           {(registerStep === 3 || registerStep === 4) && (
             <Image
-              src="/images/4_reg.webp"
+              src="/images/auth/4_reg.webp"
               alt="auth-pic"
               width={600}
               height={680}
@@ -295,7 +307,7 @@ export default function AuthPage() {
           )}
           {registerStep === 5 && (
             <Image
-              src="/images/7_reg.webp"
+              src="/images/auth/7_reg.webp"
               alt="auth-pic"
               width={600}
               height={680}
