@@ -41,25 +41,25 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky z-50">
-      <div className="flex items-start justify-between lg:max-w-[85%] mx-auto">
+    <header className='sticky z-50'>
+      <div className='flex items-start justify-between lg:max-w-[85%] mx-auto'>
         <div
-          className="flex items-end gap-1"
+          className='flex items-end gap-1'
           onClick={() => router.push('/')}
           style={{ cursor: 'pointer' }}
         >
-          <div className="mb-1">
+          <div className='mb-1'>
             {' '}
-            <img src="/images/svgIcons/logo.svg" alt="phone icon" />
+            <img src='/images/svgIcons/logo.svg' alt='phone icon' />
           </div>
-          <span className="text-2xl font-medium">ClickDone</span>
+          <span className='text-2xl font-medium'>ClickDone</span>
         </div>
         {!isAuthPage && (
-          <div className="hidden lg:flex !h-10 items-center gap-4 xl:gap-10 font-normal TextFSLG text-[#1A1A1A] xl:ml-[155px]">
-            <Link href="/categories">Categories</Link>
-            <Link href="/specialists">Specialists</Link>
-            <Link href="/about-us">About Us</Link>
-            <Link href="/blog">Blog</Link>
+          <div className='hidden lg:flex !h-10 items-center gap-4 xl:gap-10 font-normal TextFSLG text-[#1A1A1A] xl:ml-[155px]'>
+            <Link href='/categories'>Categories</Link>
+            <Link href='/specialists'>Specialists</Link>
+            <Link href='/about-us'>About Us</Link>
+            <Link href='/blog'>Blog</Link>
           </div>
         )}
         <div>
@@ -73,16 +73,16 @@ export default function Header() {
                 width: 85,
                 height: 40,
               }}
-              className="active:!bg-gray-200 hover:!bg-gray-100"
+              className='active:!bg-gray-200 hover:!bg-gray-100'
               onClick={handleChangeLogin}
             >
-              <span className="TextFS font-medium">
+              <span className='TextFS font-medium'>
                 {isLogin ? 'Sign up' : 'Log in'}
               </span>
             </Button>
           ) : (
-            <div className="flex gap-2">
-              <div className="hidden sm:block">
+            <div className='flex gap-2'>
+              <div className='hidden sm:block'>
                 <Button
                   style={{
                     borderColor: '#D9D9D9',
@@ -93,13 +93,13 @@ export default function Header() {
                     height: 40,
                   }}
                 >
-                  <div className="flex gap-2">
-                    <span className="TextFSLG font-medium text-[#1D1D1FE5]">
+                  <div className='flex gap-2'>
+                    <span className='TextFSLG font-medium text-[#1D1D1FE5]'>
                       Website for specialists
                     </span>
                     <img
-                      src="/images/svgIcons/arrowUpBtn.svg"
-                      alt="arrowUpBtn"
+                      src='/images/svgIcons/arrowUpBtn.svg'
+                      alt='arrowUpBtn'
                     />
                   </div>
                 </Button>
@@ -113,18 +113,18 @@ export default function Header() {
                   width: 85,
                   height: 40,
                 }}
-                className="active:!bg-red-500/60 hover:!bg-red-400/60 !bg-[#FF564F]"
+                className='active:!bg-red-500/60 hover:!bg-red-400/60 !bg-[#FF564F]'
                 onClick={() => {
                   router.push('/auth');
                   setIsBurgerMenuOpen(false);
                 }}
               >
-                <span className="TextFS font-medium text-white">
+                <span className='TextFS font-medium text-white'>
                   {isLogin ? 'Sign up' : 'Log in'}
                 </span>
               </Button>
               <div
-                className="cursor-pointer flex items-center justify-center active:!bg-gray-200 hover:!bg-gray-100 lg:hidden"
+                className='cursor-pointer flex items-center justify-center active:!bg-gray-200 hover:!bg-gray-100 lg:hidden'
                 style={{
                   width: 40,
                   height: 40,
@@ -139,7 +139,7 @@ export default function Header() {
                   }, 100);
                 }}
               >
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode='wait'>
                   <motion.div
                     key={isBurgerMenuOpen ? 'close' : 'open'}
                     initial={{ scale: 0.8, opacity: 0, rotate: -90 }}
@@ -152,13 +152,13 @@ export default function Header() {
                   >
                     {isBurgerMenuOpen ? (
                       <img
-                        src="/images/svgIcons/closeOverlay.svg"
-                        alt="closeOverlay"
+                        src='/images/svgIcons/closeOverlay.svg'
+                        alt='closeOverlay'
                       />
                     ) : (
                       <img
-                        src="/images/svgIcons/openOverlay.svg"
-                        alt="openOverlay"
+                        src='/images/svgIcons/openOverlay.svg'
+                        alt='openOverlay'
                       />
                     )}
                   </motion.div>

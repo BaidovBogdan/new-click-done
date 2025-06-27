@@ -1,3 +1,21 @@
-import { Girl } from './home/ui';
+import {
+  Girl,
+  SubCategory,
+  Category,
+  HowItWorks,
+  Qr,
+  Feedback,
+  FourPeople,
+  Blog,
+} from './home/ui';
 
-export { Girl };
+export {
+  Girl,
+  SubCategory,
+  Category,
+  HowItWorks,
+  Qr,
+  Feedback,
+  FourPeople,
+  Blog,
+};
