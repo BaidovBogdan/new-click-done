@@ -162,27 +162,21 @@ export default function Feedback() {
 
       {/* Для мобильных и планшетов - горизонтальный скролл */}
       <div
-        className='xl:hidden relative overflow-hidden h-[364px] sm:h-[366px]'
-        ref={constraintsRef}
+        className='xl:hidden relative overflow-x-auto overflow-y-hidden snap-x snap-mandatory h-[364px] sm:h-[366px]'
+        style={{
+          scrollbarWidth: 'none',
+        }}
       >
-        <motion.div
-          className='flex gap-4 px-4 will-change-transform'
-          drag='x'
-          dragConstraints={constraintsRef}
-          dragElastic={0.1}
-          style={{
-            width: 'fit-content',
-          }}
-        >
+        <div className='flex gap-4 px-4 min-w-max'>
           {feedbacks.map((feedback, index) => (
             <div
               key={index}
-              className='flex-shrink-0 w-[280px] sm:w-[392px] h-full'
+              className='flex-shrink-0 snap-center w-[280px] sm:w-[392px] h-full'
             >
               <FeedbackCard {...feedback} />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

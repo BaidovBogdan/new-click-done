@@ -79,18 +79,15 @@ export default function HowItWorks() {
       </div>
 
       {/* Mobile and Tablet: Horizontal Scroll */}
-      <div className='xl:hidden relative overflow-hidden' ref={constraintsRef}>
-        <motion.div
-          className='flex gap-3 px-4 sm:px-4 will-change-transform'
-          drag='x'
-          dragConstraints={constraintsRef}
-          dragElastic={0.1}
-          style={{
-            width: 'fit-content',
-          }}
-        >
+      <div
+        className='xl:hidden relative overflow-x-auto overflow-y-hidden snap-x snap-mandatory'
+        style={{
+          scrollbarWidth: 'none',
+        }}
+      >
+        <div className='flex gap-3 px-4 sm:px-4 min-w-max'>
           {howItWorks.map((item, index) => (
-            <div key={index} className='flex-shrink-0'>
+            <div key={index} className='flex-shrink-0 snap-center'>
               <HowItWorksCard
                 title={item.title}
                 description={item.description}
@@ -98,7 +95,7 @@ export default function HowItWorks() {
               />
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       {/* Desktop: Static Grid */}

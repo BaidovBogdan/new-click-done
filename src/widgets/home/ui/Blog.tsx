@@ -34,20 +34,14 @@ export default function Blog() {
 
         {/* Анимированная версия для экранов до xl */}
         <div
-          className='xl:hidden relative overflow-hidden'
-          ref={constraintsRef}
+          className='xl:hidden relative overflow-x-auto overflow-y-hidden snap-x snap-mandatory'
+          style={{
+            scrollbarWidth: 'none',
+          }}
         >
-          <motion.div
-            className='flex gap-4 px-4 sm:px-4 will-change-transform'
-            drag='x'
-            dragConstraints={constraintsRef}
-            dragElastic={0.1}
-            style={{
-              width: 'fit-content',
-            }}
-          >
+          <div className='flex gap-4 px-4 sm:px-4 min-w-max'>
             {blogCards.map((card, index) => (
-              <div key={index} className='flex-shrink-0'>
+              <div key={index} className='flex-shrink-0 snap-center'>
                 <BlogCard
                   image={card.image}
                   mobileImage={card.image}
@@ -56,7 +50,7 @@ export default function Blog() {
                 />
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
         {/* Статичная версия для xl+ экранов */}

@@ -14,3 +14,8 @@ export {
   FeedbackCard,
   BlogCard,
 };
+
+export * from './Footer';
+export * from './HowItWorks';
+export * from './Loader';
+export * from './LoadingWrapper';
