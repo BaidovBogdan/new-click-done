@@ -13,16 +13,16 @@ export default function SubCategoryItem({
         alt={title}
         width={56}
         height={56}
-        style={{ objectFit: 'contain', width: 'auto', height: 'auto' }}
         className='sm:hidden'
+        quality={100}
       />
       <Image
         src={image}
         alt={title}
         width={68}
         height={68}
-        style={{ objectFit: 'cover', width: 'auto', height: 'auto' }}
         className='hidden sm:block'
+        quality={100}
       />
       <div className='flex justify-center items-center'>
         <span className='TextFS tracking-[-0.03em] font-medium text-[#1D1D1FE5] sm:text-center'>

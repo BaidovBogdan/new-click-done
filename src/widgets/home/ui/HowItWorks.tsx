@@ -81,7 +81,7 @@ export default function HowItWorks() {
       {/* Mobile and Tablet: Horizontal Scroll */}
       <div className='xl:hidden relative overflow-hidden' ref={constraintsRef}>
         <motion.div
-          className='flex gap-3 px-4 sm:px-4'
+          className='flex gap-3 px-4 sm:px-4 will-change-transform'
           drag='x'
           dragConstraints={constraintsRef}
           dragElastic={0.1}

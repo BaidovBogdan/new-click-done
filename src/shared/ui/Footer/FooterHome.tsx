@@ -1,6 +1,6 @@
 export default function FooterHome() {
   return (
-    <footer className='flex flex-col bg-white rounded-t-3xl -mx-4 p-4 xl:-mx-0 sm:p-6 xl:p-8'>
+    <footer className='flex flex-col bg-white rounded-t-3xl -mx-4 p-4 xl:-mx-0 xl:rounded-3xl sm:p-6 xl:p-8'>
       <div className='flex flex-col xl:flex-row justify-between gap-8 xl:gap-0 relative'>
         {/* Логотип и описание */}
         <div className='flex flex-col gap-4 xl:max-w-[400px]'>

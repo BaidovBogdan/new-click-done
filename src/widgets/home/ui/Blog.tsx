@@ -38,7 +38,7 @@ export default function Blog() {
           ref={constraintsRef}
         >
           <motion.div
-            className='flex gap-4 px-4 sm:px-4'
+            className='flex gap-4 px-4 sm:px-4 will-change-transform'
             drag='x'
             dragConstraints={constraintsRef}
             dragElastic={0.1}

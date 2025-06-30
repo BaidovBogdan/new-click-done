@@ -136,7 +136,7 @@ export default function Feedback() {
             ref={constraintsRef}
           >
             <motion.div
-              className='flex gap-6 px-4'
+              className='flex gap-6 px-4 will-change-transform'
               drag='x'
               dragConstraints={{
                 left: -Math.max(
@@ -166,7 +166,7 @@ export default function Feedback() {
         ref={constraintsRef}
       >
         <motion.div
-          className='flex gap-4 px-4'
+          className='flex gap-4 px-4 will-change-transform'
           drag='x'
           dragConstraints={constraintsRef}
           dragElastic={0.1}
