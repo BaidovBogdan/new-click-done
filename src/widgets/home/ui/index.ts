@@ -7,6 +7,16 @@ import Feedback from './Feedback';
 import FourPeople from './FourPeople';
 import Blog from './Blog';
 
+// Lazy imports для оптимизации
+export {
+  LazyCategory,
+  LazyHowItWorks,
+  LazyQr,
+  LazyFeedback,
+  LazyFourPeople,
+  LazyBlog,
+} from './LazyComponents';
+
 export {
   Girl,
   SubCategory,

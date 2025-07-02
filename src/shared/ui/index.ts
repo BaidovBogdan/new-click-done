@@ -4,6 +4,8 @@ import { SubCategoryItem } from './SubCategoryItem';
 import { HowItWorksCard } from './HowItWorks';
 import { FeedbackCard } from './Feedback';
 import { BlogCard } from './Blog';
+import { Loader } from './Loader';
+import { LoadingWrapper } from './LoadingWrapper';
 
 export {
   ButtonAuth,
@@ -13,6 +15,8 @@ export {
   HowItWorksCard,
   FeedbackCard,
   BlogCard,
+  Loader,
+  LoadingWrapper,
 };
 
 export * from './Footer';

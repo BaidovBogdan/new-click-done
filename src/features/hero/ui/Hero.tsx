@@ -37,6 +37,7 @@ export default function Hero() {
             width={90}
             height={40}
             className='sm:hidden'
+            priority
           />
           <Image
             src='/images/home/tabletInstrument.webp'
@@ -44,6 +45,7 @@ export default function Hero() {
             width={144}
             height={64}
             className='hidden sm:block'
+            priority
           />
           <span>a specialist</span>
         </div>

@@ -19,7 +19,11 @@ export default function Loader() {
               damping: 10,
             }}
           >
-            <img src='/images/svgIcons/logo.svg' alt='logo icon' />
+            <img
+              src='/images/svgIcons/logo.svg'
+              alt='logo icon'
+              loading='eager'
+            />
           </motion.div>
           <motion.span
             className='text-2xl font-medium'

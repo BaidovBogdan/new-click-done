@@ -7,6 +7,12 @@ import {
   Feedback,
   FourPeople,
   Blog,
+  LazyCategory,
+  LazyHowItWorks,
+  LazyQr,
+  LazyFeedback,
+  LazyFourPeople,
+  LazyBlog,
 } from './home/ui';
 
 export {
@@ -18,4 +24,10 @@ export {
   Feedback,
   FourPeople,
   Blog,
+  LazyCategory,
+  LazyHowItWorks,
+  LazyQr,
+  LazyFeedback,
+  LazyFourPeople,
+  LazyBlog,
 };

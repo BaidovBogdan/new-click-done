@@ -7,37 +7,40 @@ export default function Girl() {
       {/* Background Line Images - Full Width */}
       <div className='absolute inset-0 left-[-54vw] right-[-50vw] w-[200vw] flex justify-center items-center overflow-hidden'>
         {/* Mobile Line */}
-        <div className='block sm:hidden w-full flex justify-center'>
+        <div className='sm:hidden w-full flex justify-center'>
           <Image
             src='/images/home/mobileLineGirl.webp'
             alt='girl line'
             width={478}
             height={163}
             className='w-screen max-w-none object-cover'
+            priority
           />
         </div>
       </div>
       {/* Tablet Line */}
       <div className='absolute inset-0 left-[-16px] right-[-50vw] w-[200vw] flex justify-center items-center overflow-hidden'>
-        <div className='hidden sm:block lg:hidden w-full flex justify-center'>
+        <div className='hidden sm:block lg:hidden w-full justify-center'>
           <Image
             src='/images/home/tabletLineGirl.webp'
             alt='girl line'
             width={869}
             height={297}
             className='w-screen max-w-none object-cover'
+            priority
           />
         </div>
       </div>
       {/* Desktop Line */}
       <div className='absolute inset-0 left-[-1.1vw] right-[-50vw] w-[200vw] flex justify-center items-center overflow-hidden 3xl:left-[-0.85vw] 4xl:left-[-0.64vw]'>
-        <div className='hidden lg:block w-full flex justify-center'>
+        <div className='hidden lg:block w-full justify-center'>
           <Image
             src='/images/home/desktopLineGirl.webp'
             alt='girl line'
             width={1582}
             height={541}
             className='w-screen max-w-none object-cover 4xl:scale-y-[0.8] 5xl:scale-y-[0.6]'
+            priority
           />
         </div>
       </div>

@@ -3,27 +3,31 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Loader } from '../Loader';
+import { useComponentsReady } from '@/shared/hooks';
 
 interface LoadingWrapperProps {
   children: React.ReactNode;
 }
 
 export default function LoadingWrapper({ children }: LoadingWrapperProps) {
-  const [isLoading, setIsLoading] = useState(true);
+  const { isReady } = useComponentsReady();
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    // Имитируем время загрузки компонентов
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
+    if (isReady) {
+      // Минимальное время показа спиннера - 800мс для плавности
+      const timer = setTimeout(() => {
+        setShowContent(true);
+      }, 800);
 
-    return () => clearTimeout(timer);
-  }, []);
+      return () => clearTimeout(timer);
+    }
+  }, [isReady]);
 
   return (
     <>
       <AnimatePresence mode='wait'>
-        {isLoading && (
+        {!showContent && (
           <motion.div
             key='loader'
             initial={{ opacity: 1 }}
@@ -42,7 +46,7 @@ export default function LoadingWrapper({ children }: LoadingWrapperProps) {
       </AnimatePresence>
 
       <AnimatePresence mode='wait'>
-        {!isLoading && (
+        {showContent && (
           <motion.div
             key='content'
             initial={{
