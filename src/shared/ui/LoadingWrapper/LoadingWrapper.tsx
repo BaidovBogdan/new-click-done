@@ -15,10 +15,9 @@ export default function LoadingWrapper({ children }: LoadingWrapperProps) {
 
   useEffect(() => {
     if (isReady) {
-      // Минимальное время показа спиннера - 800мс для плавности
       const timer = setTimeout(() => {
         setShowContent(true);
-      }, 800);
+      }, 1700);
 
       return () => clearTimeout(timer);
     }
