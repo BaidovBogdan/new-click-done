@@ -45,13 +45,37 @@ export default function Loader() {
             transition={{ delay: 0.6 }}
           />
           <motion.div
-            className='absolute top-0 left-0 w-12 h-12 border-4 border-[#FF564F] border-t-transparent rounded-full'
-            animate={{ rotate: 360 }}
+            className='absolute top-0 left-0 w-12 h-12 border-4 rounded-full'
+            initial={{
+              borderColor: '#FF564F',
+              rotate: 0,
+            }}
+            animate={{
+              borderColor: [
+                '#FF564F',
+                '#FF564F',
+                '#FF564F #FF564F #FF564F rgba(255, 86, 79, 0.8)',
+                '#FF564F #FF564F #FF564F rgba(255, 86, 79, 0.5)',
+                '#FF564F #FF564F #FF564F rgba(255, 86, 79, 0.2)',
+                '#FF564F #FF564F #FF564F transparent',
+              ],
+              rotate: [0, 0, 0, 90, 180, 360],
+            }}
             transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: 'linear',
-              delay: 0.6,
+              borderColor: {
+                times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+                duration: 1.5,
+                delay: 0.6,
+                ease: 'easeInOut',
+              },
+              rotate: {
+                times: [0, 0.2, 0.4, 0.6, 0.8, 1],
+                duration: 1.5,
+                delay: 0.6,
+                repeat: Infinity,
+                ease: 'linear',
+                repeatDelay: 0,
+              },
             }}
           />
         </div>
@@ -84,7 +108,7 @@ export default function Loader() {
               transition={{
                 duration: 1.5,
                 repeat: Infinity,
-                delay: index * 0.2 + 1.2,
+                delay: index * 0.1,
                 ease: 'easeInOut',
               }}
             />

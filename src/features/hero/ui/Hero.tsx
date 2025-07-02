@@ -112,6 +112,7 @@ export default function Hero() {
         <Input
           style={{ border: 'none', borderRadius: '10px' }}
           className='w-full !h-12'
+          type='text'
           placeholder='Service or specialist'
           suffix={
             <Button

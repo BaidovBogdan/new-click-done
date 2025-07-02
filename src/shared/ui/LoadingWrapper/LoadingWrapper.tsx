@@ -15,7 +15,7 @@ export default function LoadingWrapper({ children }: LoadingWrapperProps) {
     // Имитируем время загрузки компонентов
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1500); // 1.5 секунды
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
