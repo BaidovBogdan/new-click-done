@@ -17,6 +17,8 @@ export default function BlogCard({
             width={272}
             height={200}
             className='sm:hidden'
+            loading='lazy'
+            quality={100}
           />
           <Image
             src={image}
@@ -24,6 +26,8 @@ export default function BlogCard({
             width={368}
             height={240}
             className='hidden sm:block'
+            loading='lazy'
+            quality={100}
           />
           <span className='w-[58px] h-[30px] flex items-center justify-center TextFS font-normal bg-white rounded-lg text-center absolute top-3 left-3'>
             Article

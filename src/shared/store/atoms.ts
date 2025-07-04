@@ -1,14 +1,13 @@
-import { atomWithStorage } from 'jotai/utils';
 import { atom } from 'jotai';
 
-export const isLoginAtom = atomWithStorage('isLogin', true);
+export const isLoginAtom = atom<boolean>(true);
 
-export const isEmailAtom = atomWithStorage('isEmail', true);
+export const isEmailAtom = atom<boolean>(true);
 
-export const isForgotPasswordAtom = atomWithStorage('isForgotPassword', false);
+export const isForgotPasswordAtom = atom<boolean>(false);
 
-export const registerStepAtom = atomWithStorage('registerStep', 1);
+export const registerStepAtom = atom<number>(1);
 
-export const forgotPasswordStepAtom = atomWithStorage('forgotPasswordStep', 1);
+export const forgotPasswordStepAtom = atom<number>(1);
 
-export const isOverlayMobileHeaderAtom = atom(false);
+export const isOverlayMobileHeaderAtom = atom<boolean>(false);
