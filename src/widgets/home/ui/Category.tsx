@@ -19,6 +19,10 @@ export default function Category() {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
+  useEffect(() => {
+    console.log('Category component mounted');
+  }, []);
+
   const getImagePrefix = () => {
     if (isMobile) return 'Mobile';
     if (isTablet) return 'Tablet';

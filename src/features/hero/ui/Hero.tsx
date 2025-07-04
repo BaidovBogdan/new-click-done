@@ -77,7 +77,7 @@ export default function Hero() {
                 src='/images/svgIcons/mobileServices.svg'
                 alt='three dots'
                 style={{ willChange: 'transform, opacity' }}
-                className='absolute top-0 right-0 transform translate-x-4.5'
+                className='absolute -top-1 right-0 transform translate-x-4'
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{
                   opacity: 1,
@@ -112,8 +112,8 @@ export default function Hero() {
       </div>
       <div className='w-full max-w-[500px] lg:max-w-[600px]'>
         <Input
-          style={{ border: 'none', borderRadius: '10px' }}
-          className='w-full !h-12'
+          style={{ border: 'none', borderRadius: '16px' }}
+          className='w-full !h-12 sm:!h-14'
           type='search'
           autoComplete='off'
           role='searchbox'
@@ -123,8 +123,8 @@ export default function Hero() {
               style={{
                 backgroundColor: '#FF564F',
                 borderRadius: '12px',
-                height: '40px',
               }}
+              className='!h-10 sm:!h-12 mr-[-7px]'
             >
               <img src='/images/svgIcons/mobileSearchHero.svg' alt='search' />
               <span className='text-white font-medium TextFS'>Search</span>

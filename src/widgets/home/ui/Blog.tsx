@@ -1,8 +1,7 @@
 'use client';
 
 import { BlogCard } from '@/shared/ui';
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 const blogCards = [
   {
@@ -24,6 +23,10 @@ const blogCards = [
 
 export default function Blog() {
   const constraintsRef = useRef(null);
+
+  useEffect(() => {
+    console.log('Blog component mounted');
+  }, []);
 
   return (
     <div className='mt-16 -mx-4'>

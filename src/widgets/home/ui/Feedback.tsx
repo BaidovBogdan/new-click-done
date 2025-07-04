@@ -101,6 +101,10 @@ export default function Feedback() {
     return () => window.removeEventListener('resize', updateWidth);
   }, []);
 
+  useEffect(() => {
+    console.log('Feedback component mounted');
+  }, []);
+
   return (
     <div className='flex flex-col gap-6 sm:gap-10 -mx-4 xl:-mx-0 mt-10 sm:mt-20'>
       <span className='text-center font-medium HeadingFS2 sm:!text-[48px] sm:!leading-[48px]'>

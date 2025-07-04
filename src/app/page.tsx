@@ -9,7 +9,8 @@ import {
   LazyFourPeople,
   LazyBlog,
 } from '@/widgets';
-import { FooterHome, LoadingWrapper } from '@/shared/ui';
+import { LazyFooterHome } from '@/widgets/home/ui/LazyComponents';
+import { LoadingWrapper, LazySection } from '@/shared/ui';
 
 export default function Home() {
   return (
@@ -21,25 +22,38 @@ export default function Home() {
         <div className='mt-6 flex flex-col items-center gap-1'>
           <SubCategory />
           {/* Остальные компоненты загружаются лениво с next/dynamic */}
+
           <LazyCategory />
         </div>
 
-        <LazyHowItWorks />
+        <LazySection>
+          <LazyHowItWorks />
+        </LazySection>
 
         <div className='mt-8 flex justify-center'>
-          <LazyQr />
+          <LazySection>
+            <LazyQr />
+          </LazySection>
         </div>
 
-        <LazyFeedback />
+        <LazySection>
+          <LazyFeedback />
+        </LazySection>
 
         <div className='mt-16 flex justify-center'>
-          <LazyFourPeople />
+          <LazySection>
+            <LazyFourPeople />
+          </LazySection>
         </div>
 
-        <LazyBlog />
+        <LazySection>
+          <LazyBlog />
+        </LazySection>
 
         <div className='mt-16'>
-          <FooterHome />
+          <LazySection>
+            <LazyFooterHome />
+          </LazySection>
         </div>
       </div>
     </LoadingWrapper>

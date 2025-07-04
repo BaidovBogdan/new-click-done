@@ -15,6 +15,7 @@ export default function HowItWorksCard({
         height={280}
         className='sm:hidden'
         loading='lazy'
+        quality={100}
       />
       <Image
         src={image}
@@ -23,6 +24,7 @@ export default function HowItWorksCard({
         height={384}
         className='hidden sm:block'
         loading='lazy'
+        quality={100}
       />
       <div className='flex flex-col gap-2'>
         <div className='text-[#1D1D1FE5] font-medium !text-[16px] !leading-[20px] sm:!text-[20px] sm:!leading-[28px]'>

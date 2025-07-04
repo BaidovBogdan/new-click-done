@@ -22,6 +22,10 @@ export default function HowItWorks() {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
+  useEffect(() => {
+    console.log('HowItWorks component mounted');
+  }, []);
+
   const getHowItWorks = () => [
     {
       title: 'Post Your Request',
@@ -52,7 +56,7 @@ export default function HowItWorks() {
   const howItWorks = getHowItWorks();
 
   return (
-    <div className='flex flex-col justify-between gap-4 bg-white rounded-3xl -mx-4 xl:mx-0 xl:p-4 h-[590px] sm:h-[756px] xl:h-[788px]'>
+    <div className='flex flex-col mt-18 justify-between gap-4 bg-white rounded-3xl -mx-4 xl:mx-0 xl:p-4 h-[590px] sm:h-[756px] xl:h-[788px]'>
       <div
         ref={titleRef}
         className='font-medium text-center HeadingFS2 text-[#1A1A1A] sm:!text-[48px] sm:!leading-[48px] mt-10'

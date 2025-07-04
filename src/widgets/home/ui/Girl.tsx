@@ -55,6 +55,7 @@ export default function Girl() {
             width={340}
             height={240}
             priority
+            quality={100}
           />
         </div>
         {/* Tablet Girl */}
@@ -65,6 +66,7 @@ export default function Girl() {
             width={550}
             height={340}
             priority
+            quality={100}
           />
           {/* Tablet Squares */}
           <div className='absolute top-[9.5%] left-[-14%] w-[188px] h-[192px] bg-white z-10 rounded-2xl'>
@@ -124,6 +126,7 @@ export default function Girl() {
             width={960}
             height={480}
             priority
+            quality={100}
           />
           {/* Desktop Squares */}
           <div className='absolute top-[11.5%] left-[-12.5%] w-[188px] h-[192px] bg-white z-10 rounded-2xl'>

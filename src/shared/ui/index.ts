@@ -6,6 +6,7 @@ import { FeedbackCard } from './Feedback';
 import { BlogCard } from './Blog';
 import { Loader } from './Loader';
 import { LoadingWrapper } from './LoadingWrapper';
+import { LazySection } from './LazySection';
 
 export {
   ButtonAuth,
@@ -17,9 +18,11 @@ export {
   BlogCard,
   Loader,
   LoadingWrapper,
+  LazySection,
 };
 
 export * from './Footer';
 export * from './HowItWorks';
 export * from './Loader';
 export * from './LoadingWrapper';
+export * from './LazySection';
