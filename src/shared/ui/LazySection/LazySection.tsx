@@ -18,7 +18,7 @@ const DefaultFallback = () => (
 export default function LazySection({
   children,
   fallback = <DefaultFallback />,
-  rootMargin = '200px',
+  rootMargin = '600px',
   threshold = 0.1,
 }: LazySectionProps) {
   const [isVisible, setIsVisible] = useState(false);

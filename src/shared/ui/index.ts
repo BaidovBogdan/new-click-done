@@ -7,6 +7,7 @@ import { BlogCard } from './Blog';
 import { Loader } from './Loader';
 import { LoadingWrapper } from './LoadingWrapper';
 import { LazySection } from './LazySection';
+import { StepIndicator } from './StepIndicator';
 
 export {
   ButtonAuth,
@@ -19,6 +20,7 @@ export {
   Loader,
   LoadingWrapper,
   LazySection,
+  StepIndicator,
 };
 
 export * from './Footer';
@@ -26,3 +28,4 @@ export * from './HowItWorks';
 export * from './Loader';
 export * from './LoadingWrapper';
 export * from './LazySection';
+export * from './StepIndicator';
