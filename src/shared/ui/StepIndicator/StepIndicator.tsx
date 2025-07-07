@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import { motion } from 'framer-motion';
 
 interface StepIndicatorProps {
@@ -54,23 +55,22 @@ export default function StepIndicator({
   };
 
   return (
-    <div className='w-full h-6 flex justify-between'>
+    <div className='w-full h-6 flex items-center'>
       {steps.map((step, index) => {
         const status = getStepStatus(step);
         const stepStyles = getStepStyles(status);
         const isClickable = !disabled && step <= currentStep && onStepClick;
 
         return (
-          <div key={step} className='relative flex items-center'>
+          <React.Fragment key={step}>
             <motion.div
               className={`
-                relative w-8 h-8 rounded-full flex items-center justify-center border z-10
+                relative w-8 h-8 rounded-full flex items-center justify-center border z-10 flex-shrink-0
                 ${isClickable ? 'cursor-pointer' : ''}
                 transition-all duration-200
                 ${isClickable ? 'hover:shadow-md' : ''}
               `}
               style={{
-                backgroundColor: stepStyles.backgroundColor,
                 borderColor: stepStyles.borderColor,
                 borderWidth: stepStyles.borderWidth,
               }}
@@ -87,15 +87,39 @@ export default function StepIndicator({
                 damping: 15,
               }}
             >
+              {/* Animated Background Fill for Completed Steps */}
+              {status === 'completed' && (
+                <motion.div
+                  className='absolute inset-0 rounded-full bg-[#52c41a] z-0'
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: index * 0.1,
+                    type: 'spring',
+                    stiffness: 200,
+                    damping: 15,
+                  }}
+                />
+              )}
+
+              {/* Static Background for Other Steps */}
+              {status !== 'completed' && (
+                <div
+                  className='absolute inset-0 rounded-full z-0'
+                  style={{ backgroundColor: stepStyles.backgroundColor }}
+                />
+              )}
               {status === 'completed' ? (
                 <motion.svg
                   width='20'
                   height='20'
                   viewBox='0 0 24 24'
                   fill='none'
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                  className='relative z-10'
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 + 0.4 }}
                 >
                   <motion.path
                     d='M5 13l4 4L19 7'
@@ -105,12 +129,12 @@ export default function StepIndicator({
                     strokeLinejoin='round'
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
                   />
                 </motion.svg>
               ) : (
                 <motion.span
-                  className='!TextFSSM font-normal'
+                  className='!TextFSSM font-normal relative z-10'
                   style={{ color: stepStyles.textColor }}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -142,12 +166,9 @@ export default function StepIndicator({
 
             {/* Connection Line */}
             {index < steps.length - 1 && (
-              <div
-                className='absolute left-9 top-1/2 w-full !h-[0.1px] bg-[#1D1D1F73] transform -translate-y-1/2 z-0 opacity-50'
-                style={{ width: 'calc(100vw / 4 - 56px)' }}
-              />
+              <div className='flex-1 h-px bg-[#1D1D1F73] opacity-20 mx-1.5' />
             )}
-          </div>
+          </React.Fragment>
         );
       })}
     </div>

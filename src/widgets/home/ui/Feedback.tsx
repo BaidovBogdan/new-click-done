@@ -55,6 +55,16 @@ const feedbacks = [
     spec2: 'IT specialist',
     image: '/images/home/avatarNegr.webp',
   },
+  {
+    spec: 'Cleaning',
+    time: '1 week ago',
+    stars: '4,2',
+    name: 'Marie Riead',
+    description:
+      'Download and get easy access to the orders, Download and get easy access to the orders,Download and get easy access to the orders, Download and get easy  to the orders,Download and get easy access to the orders, Download and get easy',
+    spec2: 'IT specialist',
+    image: '/images/home/avatarNegr.webp',
+  },
 ];
 
 const svgComment = (
@@ -85,6 +95,9 @@ export default function Feedback() {
   const mobileConstraintsRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(800);
   const [mobileContainerWidth, setMobileContainerWidth] = useState(400);
+
+  // Создаем бесконечный массив карточек
+  const infiniteFeedbacks = [...feedbacks, ...feedbacks, ...feedbacks];
 
   useEffect(() => {
     const updateWidth = () => {
@@ -145,7 +158,7 @@ export default function Feedback() {
               dragConstraints={{
                 left: -Math.max(
                   0,
-                  feedbacks.length * (392 + 16) - containerWidth
+                  infiniteFeedbacks.length * (392 + 24) - containerWidth
                 ),
                 right: 0,
               }}
@@ -154,7 +167,7 @@ export default function Feedback() {
                 width: 'fit-content',
               }}
             >
-              {feedbacks.map((feedback, index) => (
+              {infiniteFeedbacks.map((feedback, index) => (
                 <div key={index} className='flex-shrink-0 w-[392px] h-full'>
                   <FeedbackCard {...feedback} />
                 </div>
@@ -172,7 +185,7 @@ export default function Feedback() {
         }}
       >
         <div className='flex gap-4 px-4 min-w-max'>
-          {feedbacks.map((feedback, index) => (
+          {infiniteFeedbacks.map((feedback, index) => (
             <div
               key={index}
               className='flex-shrink-0 snap-center w-[280px] sm:w-[392px] h-full'
