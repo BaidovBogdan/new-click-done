@@ -7,7 +7,7 @@ import { ConfigProvider, ThemeConfig } from 'antd';
 import { isOverlayMobileHeaderAtom } from '../shared/store/atoms';
 import { usePathname } from 'next/navigation';
 import '@ant-design/v5-patch-for-react-19';
-import { Footer, Loader } from '@/shared/ui';
+import { Footer, FooterHome, Loader } from '@/shared/ui';
 import { useAtom } from 'jotai';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLoader } from '@/shared/hooks';
@@ -26,7 +26,8 @@ const theme: ThemeConfig = {
 const Providers: FC<ProvidersProps> = ({ children }) => {
   const [isOverlayMobileHeader] = useAtom(isOverlayMobileHeaderAtom);
   const pathname = usePathname();
-  const isHomePage = pathname === '/';
+  const isHomePageOrBlogOrPost =
+    pathname === '/' || pathname === '/blog' || pathname.startsWith('/blog/');
   const { isLoaded } = useLoader();
 
   return (
@@ -85,7 +86,7 @@ const Providers: FC<ProvidersProps> = ({ children }) => {
                     {isOverlayMobileHeader && <Overlay />}
                   </AnimatePresence>
                 </main>
-                {!isHomePage && <Footer />}
+                {!isHomePageOrBlogOrPost && <Footer />}
               </div>
             </motion.div>
           )}

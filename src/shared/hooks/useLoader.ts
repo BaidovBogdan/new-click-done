@@ -9,6 +9,13 @@ export const useLoader = () => {
     // Прелоад критичных изображений для overlay
     const preloadImages = () => {
       const images = [
+        '/images/svgIcons/logo.svg',
+        '/images/home/mobileGirlHero.webp',
+        '/images/home/mobileLineGirl.webp',
+        '/images/home/desktopGirlHero.webp',
+        '/images/home/desktopLineGirl.webp',
+        '/images/home/tabletGirlHero.webp',
+        '/images/home/tabletLineGirl.webp',
         '/images/home/tabletOverlay.webp',
         '/images/home/mobileOverlay.webp',
       ];

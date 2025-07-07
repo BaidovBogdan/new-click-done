@@ -113,7 +113,7 @@ export default function Hero() {
       <div className='w-full max-w-[500px] lg:max-w-[600px]'>
         <Input
           style={{ border: 'none', borderRadius: '16px' }}
-          className='w-full !h-12 sm:!h-14'
+          className='w-full !h-12 sm:!h-14 caret-[#FF564F]'
           type='search'
           autoComplete='off'
           role='searchbox'

@@ -112,7 +112,7 @@ export default function Qr() {
         alt='qr'
         width={754}
         height={381}
-        className='!min-h-[381px] hidden sm:block xl:hidden'
+        className='!min-h-[381px] hidden sm:block xl:hidden p-2'
         loading='lazy'
         quality={100}
       />

@@ -4,8 +4,14 @@ import { useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from 'antd';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import { isOverlayMobileHeaderAtom } from '@/shared/store/atoms';
+import { useAtom } from 'jotai';
 
 export default function Overlay() {
+  const [isOverlayMobileHeader, setIsOverlayMobileHeader] = useAtom(
+    isOverlayMobileHeaderAtom
+  );
   useEffect(() => {
     document.body.style.overflow = 'hidden';
 
@@ -16,9 +22,13 @@ export default function Overlay() {
 
   const menuItems = ['Categories', 'Specialists', 'About Us', 'Blog'];
 
+  const handleCloseOverlay = () => {
+    setIsOverlayMobileHeader(false);
+  };
+
   return (
     <motion.div
-      className='fixed inset-x-0 top-[80px] bottom-0 bg-white z-40 p-4 flex flex-col justify-between !overflow-hidden will-change-transform'
+      className='fixed inset-x-0 top-[60px] bottom-0 bg-white z-40 p-4 flex flex-col justify-between !overflow-hidden will-change-transform'
       initial={{ x: '100%' }}
       animate={{ x: 0 }}
       exit={{ x: '100%' }}
@@ -69,7 +79,9 @@ export default function Overlay() {
               ease: [0.25, 0.46, 0.45, 0.94],
             }}
           >
-            {item}
+            <Link href={`/${item.toLowerCase()}`} onClick={handleCloseOverlay}>
+              {item}
+            </Link>
           </motion.span>
         ))}
       </div>

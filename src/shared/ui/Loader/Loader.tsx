@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Loader() {
   return (
-    <div className='fixed inset-0 bg-white z-50 flex items-center justify-center'>
+    <div className='fixed inset-0 bg-white !z-[999999] flex items-center justify-center'>
       <motion.div
         className='mb-1'
         style={{

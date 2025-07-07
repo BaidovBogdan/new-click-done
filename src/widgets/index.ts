@@ -14,6 +14,7 @@ import {
   LazyFourPeople,
   LazyBlog,
 } from './home/ui';
+import { BlogCTA, PopularService, FiltersButton, BlogGrid } from './blog/ui';
 
 export {
   Girl,
@@ -30,4 +31,8 @@ export {
   LazyFeedback,
   LazyFourPeople,
   LazyBlog,
+  BlogCTA,
+  PopularService,
+  FiltersButton,
+  BlogGrid,
 };

@@ -43,23 +43,90 @@ export default function Header() {
   return (
     <header className='sticky z-50'>
       <div className='flex items-start justify-between lg:max-w-[85%] mx-auto'>
-        <div
-          className='flex items-end gap-1'
-          onClick={() => router.push('/')}
-          style={{ cursor: 'pointer' }}
-        >
-          <div className='mb-1'>
-            {' '}
-            <img src='/images/svgIcons/logo.svg' alt='phone icon' />
+        <Link href='/'>
+          <div
+            className='flex items-end gap-1'
+            onClick={() => {
+              setIsBurgerMenuOpen(false);
+            }}
+          >
+            <div className='mb-1'>
+              {' '}
+              <img src='/images/svgIcons/logo.svg' alt='phone icon' />
+            </div>
+            <span className='text-2xl font-medium'>ClickDone</span>
           </div>
-          <span className='text-2xl font-medium'>ClickDone</span>
-        </div>
+        </Link>
         {!isAuthPage && (
           <div className='hidden lg:flex !h-10 items-center gap-4 xl:gap-10 font-normal TextFSLG text-[#1A1A1A] xl:ml-[155px]'>
-            <Link href='/categories'>Categories</Link>
-            <Link href='/specialists'>Specialists</Link>
-            <Link href='/about-us'>About Us</Link>
-            <Link href='/blog'>Blog</Link>
+            <motion.div
+              className='relative'
+              whileHover='hover'
+              initial='initial'
+            >
+              <Link href='/categories' className='block'>
+                <span>Categories</span>
+              </Link>
+              <motion.div
+                className='absolute bottom-0 left-0 h-[2px] bg-[#FF564F]'
+                variants={{
+                  initial: { width: 0 },
+                  hover: { width: '100%' },
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+            </motion.div>
+            <motion.div
+              className='relative'
+              whileHover='hover'
+              initial='initial'
+            >
+              <Link href='/specialists' className='block'>
+                <span>Specialists</span>
+              </Link>
+              <motion.div
+                className='absolute bottom-0 left-0 h-[2px] bg-[#FF564F]'
+                variants={{
+                  initial: { width: 0 },
+                  hover: { width: '100%' },
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+            </motion.div>
+            <motion.div
+              className='relative'
+              whileHover='hover'
+              initial='initial'
+            >
+              <Link href='/about-us' className='block'>
+                <span>About Us</span>
+              </Link>
+              <motion.div
+                className='absolute bottom-0 left-0 h-[2px] bg-[#FF564F]'
+                variants={{
+                  initial: { width: 0 },
+                  hover: { width: '100%' },
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+            </motion.div>
+            <motion.div
+              className='relative'
+              whileHover='hover'
+              initial='initial'
+            >
+              <Link href='/blog' className='block'>
+                <span>Blog</span>
+              </Link>
+              <motion.div
+                className='absolute bottom-0 left-0 h-[2px] bg-[#FF564F]'
+                variants={{
+                  initial: { width: 0 },
+                  hover: { width: '100%' },
+                }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+              />
+            </motion.div>
           </div>
         )}
         <div>
@@ -147,7 +214,7 @@ export default function Header() {
                     exit={{ scale: 0.8, opacity: 0, rotate: 90 }}
                     transition={{
                       duration: 0.2,
-                      ease: [0.25, 0.46, 0.45, 0.94], // easeOutQuart - похоже на Face ID
+                      ease: [0.25, 0.46, 0.45, 0.94],
                     }}
                   >
                     {isBurgerMenuOpen ? (

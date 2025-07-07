@@ -3,7 +3,7 @@ import { Footer, FooterHome } from './Footer';
 import { SubCategoryItem } from './SubCategoryItem';
 import { HowItWorksCard } from './HowItWorks';
 import { FeedbackCard } from './Feedback';
-import { BlogCard } from './Blog';
+import { BlogCard, BlogPageCard, FilterButton, BlogGridCard } from './Blog';
 import { Loader } from './Loader';
 import { LazySection } from './LazySection';
 import { StepIndicator } from './StepIndicator';
@@ -16,6 +16,9 @@ export {
   HowItWorksCard,
   FeedbackCard,
   BlogCard,
+  BlogPageCard,
+  FilterButton,
+  BlogGridCard,
   Loader,
   LazySection,
   StepIndicator,
