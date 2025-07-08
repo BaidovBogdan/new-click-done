@@ -3,6 +3,7 @@ export interface BlogCardProps {
   mobileImage: string;
   desc: string;
   date: string;
+  big?: boolean;
 }
 
 export interface BlogPageCardProps {

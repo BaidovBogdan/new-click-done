@@ -282,7 +282,10 @@ export default function Category() {
       <div className='hidden xl:flex flex-col gap-6 items-center justify-center'>
         {/* First row - 2 divs, height 260px each */}
         <div className='flex gap-6'>
-          <Link href={categories[0].link}>
+          <Link
+            href={categories[0].link}
+            className='hover:scale-105 transition-all duration-300'
+          >
             <div
               className='h-[260px] !w-[588px] bg-white rounded-3xl relative overflow-hidden'
               style={{
@@ -301,7 +304,10 @@ export default function Category() {
               </div>
             </div>
           </Link>
-          <Link href={categories[1].link}>
+          <Link
+            href={categories[1].link}
+            className='hover:scale-105 transition-all duration-300'
+          >
             <div
               className='h-[260px] !w-[588px] bg-white rounded-3xl relative overflow-hidden'
               style={{
@@ -324,7 +330,10 @@ export default function Category() {
 
         {/* Second row - 3 divs, height 260px each */}
         <div className='flex gap-6'>
-          <Link href={categories[2].link}>
+          <Link
+            href={categories[2].link}
+            className='hover:scale-105 transition-all duration-300'
+          >
             <div
               className='h-[260px] !w-[384px] bg-white rounded-3xl relative overflow-hidden'
               style={{
@@ -343,7 +352,10 @@ export default function Category() {
               </div>
             </div>
           </Link>
-          <Link href={categories[3].link}>
+          <Link
+            href={categories[3].link}
+            className='hover:scale-105 transition-all duration-300'
+          >
             <div
               className='h-[260px] !w-[384px] bg-white rounded-3xl relative overflow-hidden'
               style={{
@@ -362,7 +374,10 @@ export default function Category() {
               </div>
             </div>
           </Link>
-          <Link href={categories[4].link}>
+          <Link
+            href={categories[4].link}
+            className='hover:scale-105 transition-all duration-300'
+          >
             <div
               className='h-[260px] !w-[384px] bg-white rounded-3xl relative overflow-hidden'
               style={{

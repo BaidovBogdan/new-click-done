@@ -7,7 +7,7 @@ export default function SubCategoryItem({
   link,
 }: SubCategoryItemProps) {
   return (
-    <div className='flex flex-row sm:flex-col sm:items-center sm:justify-center pr-3 sm:pr-0 gap-2 h-[48px] sm:w-[164px] sm:h-[136px] xl:w-[136px] xl:h-[136px] bg-white rounded-xl sm:rounded-3xl'>
+    <div className='flex flex-row sm:flex-col sm:items-center sm:justify-center pr-3 sm:pr-0 gap-2 h-[48px] sm:w-[164px] sm:h-[136px] xl:w-[136px] xl:h-[136px] bg-white rounded-xl sm:rounded-3xl xl:hover:scale-105 transition-all duration-300'>
       <Image
         src={image}
         alt={title}

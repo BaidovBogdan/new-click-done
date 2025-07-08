@@ -7,7 +7,7 @@ import { ConfigProvider, ThemeConfig } from 'antd';
 import { isOverlayMobileHeaderAtom } from '../shared/store/atoms';
 import { usePathname } from 'next/navigation';
 import '@ant-design/v5-patch-for-react-19';
-import { Footer, FooterHome, Loader } from '@/shared/ui';
+import { Footer, Loader } from '@/shared/ui';
 import { useAtom } from 'jotai';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useLoader } from '@/shared/hooks';
