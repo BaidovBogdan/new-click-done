@@ -345,7 +345,7 @@ export default function PopularService() {
                   <Link href={item.link}>
                     <div className='w-[288px] h-[120px] bg-white rounded-2xl p-4 flex items-center justify-between hover:shadow-md transition-shadow'>
                       <div className='flex-1'>
-                        <h3 className='text-sm font-medium text-gray-900 leading-tight'>
+                        <h3 className='text-sm font-medium text-gray-900 leading-tight mb-12'>
                           {item.title}
                         </h3>
                       </div>
@@ -385,7 +385,7 @@ export default function PopularService() {
                   <Link href={item.link}>
                     <div className='w-[288px] h-[120px] bg-white rounded-2xl p-4 flex items-center justify-between hover:shadow-md transition-shadow'>
                       <div className='flex-1'>
-                        <h3 className='text-sm font-medium text-gray-900 leading-tight'>
+                        <h3 className='text-sm font-medium text-gray-900 leading-tight mb-12'>
                           {item.title}
                         </h3>
                       </div>
