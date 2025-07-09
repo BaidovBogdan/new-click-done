@@ -1,4 +1,4 @@
-import { BlogGridCard } from '@/shared/ui';
+import { BlogGridCard, XlBlogGridCard } from '@/shared/ui';
 
 const blogCards = [
   {
@@ -8,12 +8,12 @@ const blogCards = [
   },
   {
     image: '/images/home/Laptop-blog2.webp',
-    desc: 'Without five minutes: does microlearning work?',
+    desc: 'Does avoiding impulse purchases help you save money?',
     date: '12.06.2025',
   },
   {
     image: '/images/home/Laptop-blog3.webp',
-    desc: 'A small guide to self-checking your bike',
+    desc: 'Does avoiding impulse purchases help you save money?',
     date: '12.06.2025',
   },
 ];
@@ -32,10 +32,19 @@ export default function BlogGrid() {
     ...blogCards,
     {
       image: '/images/home/Laptop-blog3.webp',
-      desc: 'A small guide to self-checking your bike',
+      desc: 'Does avoiding impulse purchases help you save money?',
       date: '12.06.2025',
     },
   ];
+
+  const xlCards = [...blogCards, ...blogCards];
+
+  const xlBigCard = {
+    image: '/images/blog/laptop-grid.webp',
+    desc: 'Does avoiding impulse purchases help you save money?',
+    date: '12.06.2025',
+    xlImage: '/images/blog/laptop-grid.webp',
+  };
 
   return (
     <div className='flex flex-col gap-4 justify-center items-center'>
@@ -50,7 +59,7 @@ export default function BlogGrid() {
           />
         ))}
       </div>
-      <div className='hidden sm:flex flex-col gap-4'>
+      <div className='hidden sm:flex flex-col gap-4 xl:hidden'>
         <div>
           <BlogGridCard
             image={bigCard.image}
@@ -66,6 +75,32 @@ export default function BlogGrid() {
               key={index}
               image={card.image}
               mobileImage={card.image}
+              desc={card.desc}
+              date={card.date}
+            />
+          ))}
+        </div>
+      </div>
+      <div className='hidden xl:flex flex-col gap-8'>
+        <div className='flex gap-6'>
+          <XlBlogGridCard
+            image={xlBigCard.image}
+            desc={xlBigCard.desc}
+            date={xlBigCard.date}
+            big={true}
+          />
+          <XlBlogGridCard
+            image={xlBigCard.image}
+            desc={xlBigCard.desc}
+            date={xlBigCard.date}
+            big={true}
+          />
+        </div>
+        <div className='grid grid-cols-3 gap-6'>
+          {xlCards.map((card, index) => (
+            <XlBlogGridCard
+              key={index}
+              image={card.image}
               desc={card.desc}
               date={card.date}
             />

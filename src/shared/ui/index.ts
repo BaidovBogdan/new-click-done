@@ -3,7 +3,13 @@ import { Footer, FooterHome } from './Footer';
 import { SubCategoryItem } from './SubCategoryItem';
 import { HowItWorksCard } from './HowItWorks';
 import { FeedbackCard } from './Feedback';
-import { BlogCard, BlogPageCard, FilterButton, BlogGridCard } from './Blog';
+import {
+  BlogCard,
+  BlogPageCard,
+  FilterButton,
+  BlogGridCard,
+  XlBlogGridCard,
+} from './Blog';
 import { Loader } from './Loader';
 import { LazySection } from './LazySection';
 import { StepIndicator } from './StepIndicator';
@@ -19,6 +25,7 @@ export {
   BlogPageCard,
   FilterButton,
   BlogGridCard,
+  XlBlogGridCard,
   Loader,
   LazySection,
   StepIndicator,

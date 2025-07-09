@@ -15,34 +15,36 @@ export default function Blog() {
         },
       }}
     >
-      <div className='mt-4'>
-        <div>
-          <Breadcrumb
-            items={[
-              {
-                title: 'Main',
-              },
-              {
-                title: 'News',
-              },
-            ]}
-          />
+      <div className='xl:mx-[110px]'>
+        <div className='mt-4'>
+          <div className='xl:max-w-[1184px] xl:mx-auto'>
+            <Breadcrumb
+              items={[
+                {
+                  title: 'Main',
+                },
+                {
+                  title: 'News',
+                },
+              ]}
+            />
+          </div>
         </div>
-      </div>
-      <div className='mt-6'>
-        <BlogCTA />
-      </div>
-      <div className='mt-6'>
-        <PopularService />
-      </div>
-      <div className='mt-6'>
-        <FiltersButton />
-      </div>
-      <div className='mt-8'>
-        <BlogGrid />
-      </div>
-      <div className='mt-32'>
-        <FooterHome />
+        <div className='mt-6'>
+          <BlogCTA />
+        </div>
+        <div className='mt-6'>
+          <PopularService />
+        </div>
+        <div className='mt-6'>
+          <FiltersButton />
+        </div>
+        <div className='mt-8'>
+          <BlogGrid />
+        </div>
+        <div className='mt-32 xl:-mx-24'>
+          <FooterHome />
+        </div>
       </div>
     </ConfigProvider>
   );

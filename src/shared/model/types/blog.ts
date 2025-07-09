@@ -4,6 +4,14 @@ export interface BlogCardProps {
   desc: string;
   date: string;
   big?: boolean;
+  xlImage?: string;
+}
+
+export interface XlBlogCardProps {
+  image: string;
+  desc: string;
+  date: string;
+  big?: boolean;
 }
 
 export interface BlogPageCardProps {

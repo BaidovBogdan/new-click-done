@@ -210,11 +210,8 @@ export default function PopularService() {
   const secondRow = getSubCategory(breakpoint).slice(6, 13);
 
   return (
-    <div
-      ref={containerRef}
-      className='w-screen overflow-hidden py-8 -mx-4 xl:mx-[120px]'
-    >
-      <div className='p-4 xl:flex xl:justify-between xl:max-w-[1230px]'>
+    <div ref={containerRef} className='overflow-hidden py-8 -mx-4'>
+      <div className='p-4 xl:flex xl:justify-between xl:max-w-[1230px] xl:mx-auto'>
         <span className='HeadingFS3 font-medium text-left'>
           Popular service
         </span>
@@ -369,7 +366,7 @@ export default function PopularService() {
         </div>
       </div>
       {/* Desktop: 4 карточки с переключением через стрелочки */}
-      <div className='hidden xl:block p-4 overflow-hidden mr-[316.5px]'>
+      <div className='hidden xl:block p-4 overflow-hidden'>
         <div className='mx-auto'>
           <AnimatePresence mode='wait'>
             <motion.div
