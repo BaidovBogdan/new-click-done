@@ -366,7 +366,7 @@ export default function PopularService() {
         </div>
       </div>
       {/* Desktop: 4 карточки с переключением через стрелочки */}
-      <div className='hidden xl:block p-4 overflow-hidden'>
+      <div className='hidden xl:block p-4'>
         <div className='mx-auto'>
           <AnimatePresence mode='wait'>
             <motion.div
