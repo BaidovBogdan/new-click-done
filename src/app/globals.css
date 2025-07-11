@@ -6,6 +6,14 @@
   --breakpoint-5xl: 2560px;
 }
 
+@font-face {
+  font-family: 'Involve';
+  src: url('/fonts/Involve-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --font-poppins: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -103,6 +111,12 @@ body {
 
 .HeadingLH5 {
   line-height: 24px;
+}
+
+.font-involve {
+  font-family: 'Involve', 'Poppins', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-weight: 600;
 }
 
 .ant-select-status-error .ant-select-selector {
