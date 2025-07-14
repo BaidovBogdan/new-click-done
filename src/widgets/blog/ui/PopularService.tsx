@@ -135,7 +135,7 @@ const svgLeftArrow = (isActive: boolean = true) => (
   </svg>
 );
 
-export default function PopularService() {
+export default function PopularService({ title }: { title?: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef, { amount: 0.01 });
   const [isOverlayMobileHeader] = useAtom(isOverlayMobileHeaderAtom);
@@ -212,8 +212,8 @@ export default function PopularService() {
   return (
     <div ref={containerRef} className='overflow-hidden py-8 -mx-4'>
       <div className='p-4 xl:flex xl:justify-between xl:max-w-[1230px] xl:mx-auto'>
-        <span className='HeadingFS3 font-medium text-left'>
-          Popular service
+        <span className='HeadingFS3 font-medium text-left sm:!text-[32px] sm:!leading-[40px]'>
+          {title || 'Popular service'}
         </span>
         <div className='gap-3 hidden xl:flex'>
           <button

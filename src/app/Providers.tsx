@@ -30,6 +30,8 @@ const Providers: FC<ProvidersProps> = ({ children }) => {
     pathname === '/' || pathname === '/blog' || pathname.startsWith('/blog/');
   const { isLoaded } = useLoader();
 
+  const isAuth = pathname === '/auth';
+
   return (
     <SessionProvider>
       <ConfigProvider theme={theme}>
@@ -86,7 +88,7 @@ const Providers: FC<ProvidersProps> = ({ children }) => {
                     {isOverlayMobileHeader && <Overlay />}
                   </AnimatePresence>
                 </main>
-                {!isHomePageOrBlogOrPost && <Footer />}
+                {isAuth && <Footer />}
               </div>
             </motion.div>
           )}
